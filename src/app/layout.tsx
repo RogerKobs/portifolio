@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang='pt-BR'>
       <body
-        className={`mx-32 my-16 bg-zinc-900 leading-relaxed text-slate-400 antialiased ${inter.className}`}
+        className={`bg-zinc-900 leading-relaxed text-slate-400 antialiased ${inter.className}`}
       >
         {children}
       </body>

@@ -1,11 +1,12 @@
 'use client';
-
 import { Experience, ExperienceProps } from '@/components/Experience';
 import { Project } from '@/components/Project';
 
 import { GitHub, LinkedIn, DescriptionOutlined } from '@mui/icons-material';
 
-export default function Home() {
+import dynamic from 'next/dynamic';
+
+function Home() {
   const experiences: ExperienceProps[] = [
     {
       organization: 'Null Bug',
@@ -51,7 +52,7 @@ export default function Home() {
                 Eu desenvolvo soluções práticas e eficazes para a web.
               </p>
 
-              <nav className='flex flex-col my-16'>
+              <nav className='flex-col my-16'>
                 <ul>
                   <li>
                     <a href='#about'>Sobre</a>
@@ -162,3 +163,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
