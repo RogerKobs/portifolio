@@ -1,4 +1,5 @@
 'use client';
+
 import { Experience, ExperienceProps } from '@/components/Experience';
 import { Project } from '@/components/Project';
 
@@ -38,69 +39,50 @@ function Home() {
 
   return (
     <div className='inset-0 lg:absolute'>
-      <div className='mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0'>
+      <div className='mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 xl:px-24 lg:py-0'>
         <div className='lg:flex lg:justify-between lg:gap-4'>
-          <header className='lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24'>
-            <div>
-              <h1 className='text-5xl font-bold text-gray-200'>Roger Kobs</h1>
+          <header className='lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex-col lg:py-24'>
+            <h1 className='text-5xl font-bold text-gray-200'>Roger Kobs</h1>
 
-              <h2 className='text-xl mt-2 mb-4 font-bold text-gray-200'>
+            <div className='flex item-center mt-2 mb-4 '>
+              <h2 className='text-xl font-bold text-gray-200 mr-4'>
                 Desenvolvedor Front-End
               </h2>
 
-              <p className='w-2/3'>
-                Eu desenvolvo soluções práticas e eficazes para a web.
-              </p>
+              <ul className='flex space-x-2'>
+                <li>
+                  <a
+                    href='https://github.com/RogerKobs'
+                    target='_blank'
+                    title='GitHub'
+                  >
+                    <GitHub sx={iconSx} />
+                  </a>
+                </li>
 
-              <nav className='flex-col my-16'>
-                <ul>
-                  <li>
-                    <a href='#about'>Sobre</a>
-                  </li>
-                  <li>
-                    <a href='#experiences'>Experiências</a>
-                  </li>
-                  <li>
-                    <a href='#projects'>Projetos</a>
-                  </li>
-                </ul>
-              </nav>
+                <li>
+                  <a
+                    href='https://www.linkedin.com/in/roger-gabriel-schneider-kobs-24608218b/'
+                    target='_blank'
+                    title='LinkedIn'
+                  >
+                    <LinkedIn sx={iconSx} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href='' target='_blank' title='Currículo'>
+                    <DescriptionOutlined sx={iconSx} />
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul className='flex space-x-4'>
-              <li>
-                <a
-                  href='https://github.com/RogerKobs'
-                  target='_blank'
-                  title='GitHub'
-                >
-                  <GitHub sx={iconSx} />
-                </a>
-              </li>
+            <p className='w-2/3'>
+              Eu desenvolvo soluções práticas e eficazes para a web.
+            </p>
 
-              <li>
-                <a
-                  href='https://www.linkedin.com/in/roger-gabriel-schneider-kobs-24608218b/'
-                  target='_blank'
-                  title='LinkedIn'
-                >
-                  <LinkedIn sx={iconSx} />
-                </a>
-              </li>
-
-              <li>
-                <a href='' target='_blank' title='Currículo'>
-                  <DescriptionOutlined sx={iconSx} />
-                </a>
-              </li>
-            </ul>
-          </header>
-
-          <main className='pt-16 lg:w-1/2 lg:py-16'>
-            <section
-              id='about'
-              className='mb-8 scroll-mt-8 md:mb-16 lg:mb-28 lg:scroll-mt-16'
-            >
+            <section id='about' className='mt-16 lt:mb-28'>
               <strong className='text-xl text-gray-400'>Sobre mim</strong>
 
               <div className='space-y-4 mt-4'>
@@ -124,10 +106,12 @@ function Home() {
                 </p>
               </div>
             </section>
+          </header>
 
+          <main className='py-8 lg:w-1/2 lg:py-16'>
             <section
               id='experiences'
-              className='mb-8 scroll-mt-16 md:mb-16 lg:mb-28 lg:scroll-mt-16'
+              className='mb-8 scroll-mt-16 md:mb-8 lg:mb-16 lg:scroll-mt-16'
             >
               <strong className='text-xl text-gray-400'>Experiências</strong>
 
@@ -145,10 +129,7 @@ function Home() {
               </div>
             </section>
 
-            <section
-              id='projects'
-              className='scroll-mt-16 md:mb-16 lg:mb-28 lg:scroll-mt-16'
-            >
+            <section id='projects' className='scroll-mt-16 lg:scroll-mt-16'>
               <strong className='text-xl text-gray-400'>Projetos</strong>
 
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
